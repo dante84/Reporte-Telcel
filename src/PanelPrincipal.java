@@ -57,8 +57,8 @@ public class PanelPrincipal extends JPanel implements Printable {
               pDatos.setBorder(new LineBorder(Color.BLACK, 1));                            
               
               eNombre = new JLabel("Nombre : ");
-              eFechaInicial = new JLabel("Fecha Inicial ; ");
-              eFechaFinal = new JLabel("Fecha Final ; ");
+              eFechaInicial = new JLabel("Fecha Inicial : ");
+              eFechaFinal = new JLabel("Fecha Final : ");
               
               cNombre = new JTextField(30);
               cFechaInicial = new JTextField(20);
@@ -289,8 +289,7 @@ public class PanelPrincipal extends JPanel implements Printable {
                                if (ok) {
                                      try {
                                          job.print(aset);
-                                     } catch (PrinterException ex) {
-                                   /* The job did not successfully complete */
+                                     } catch (PrinterException ex) {                                   
                                }
                            }
                         }
@@ -367,10 +366,10 @@ public class PanelPrincipal extends JPanel implements Printable {
               Graphics2D g2d = (Graphics2D)g;
               g2d.translate(pf.getImageableX(), pf.getImageableY());
                              
-              int y = 300;
-              int x = 500;
+              int y = 150;
+              int x = 400;
               
-              Font fuenteCuerpo = new Font("serif", Font.PLAIN,15);
+              Font fuenteCuerpo = new Font("serif", Font.PLAIN,10);
               g.setFont(fuenteCuerpo);
               
               for( int k = 0; k <= listaDatos.size() - 1; k++ ){
@@ -384,17 +383,20 @@ public class PanelPrincipal extends JPanel implements Printable {
                         
                         if( datos[l] != null ){
                             g.drawString((String)datos[l] + " ", x, y);
-                            x += 175;
+                            x += 70;
+                        }else{
+                              g.drawString("      ", x, y);
+                              x += 70;
                         }
                         
                    }
                    
                    y += 25;
-                   x = 500;
+                   x = 400;
                    
               }
               
-              Font fuenteLeyenda = new Font("serif", Font.PLAIN,10);
+              Font fuenteLeyenda = new Font("serif", Font.PLAIN,7);
               g.setFont(fuenteLeyenda);
 
               String fi = cFechaInicial.getText().trim();
@@ -408,15 +410,15 @@ public class PanelPrincipal extends JPanel implements Printable {
               int aFf = Integer.parseInt(ff.substring(6,10));
                                           
               g.drawString("Manifiesto expresamente que la jornada de labores asentada en el presente registro de asistencia es la que labore durante el período comprendido del ASENTAR PERIODO VGR. DEL " +
-                            dFi + " AL " +  dFf + " DE " + meses[mFi] + " DEL " + aFi + " y que durante ",50,500);
-              g.drawString("dicho período NO labore tiempo extraordinario alguno,ya que me encuentro consiente de que de acuerdo a mi contrato individual " + 
-                           "de trabajo en los casos en que por circunstancias especiales sea necesario prolongar la jornada ",50,520);
-              g.drawString("laboral me obligo a laborar la jornada extraordinaria que sea necesaria, de conformidad con lo dispuesto " + 
-                           "por el artículo 66 de la Ley Federal del Trabajo,en la inteligencia de que dicha jornada sólo será laborada previa ",50,540);
-              g.drawString("autorización que en forma previa y por escrito me entregue el PATRÓN o sus representantes.",50,560);
+                            dFi + " AL " +  dFf + " DE " + meses[mFi] + " DEL " + aFi ,50,400);
+              g.drawString(" y que durante dicho período NO labore tiempo extraordinario alguno,ya que me encuentro consiente de que de acuerdo a mi contrato individual " + 
+                           "de trabajo en los casos en que por circunstancias especiales sea ",50,420);
+              g.drawString("necesario prolongar la jornada laboral me obligo a laborar la jornada extraordinaria que sea necesaria, de conformidad con lo dispuesto " + 
+                           "por el artículo 66 de la Ley Federal del Trabajo,en la inteligencia ",50,440);
+              g.drawString("de que dicha jornada sólo será laborada previa autorización que en forma previa y por escrito me entregue el PATRÓN o sus representantes.",50,460);
               
               
-              g.drawString((String)listaDatos.get(0)[0] + " ", 50, 620);
+              g.drawString((String)listaDatos.get(0)[0] + " ", 50, 520);
                
               return PAGE_EXISTS;
              
