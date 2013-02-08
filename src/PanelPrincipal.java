@@ -111,8 +111,7 @@ public class PanelPrincipal extends JPanel implements Printable {
               gbc.anchor = GridBagConstraints.WEST;
               gbc.insets = new Insets(5, 5, 5, 5);
               pDatos.add(cFechaFinal,gbc);
-              
-              
+                            
               modelo.addColumn("Nombre Trabajador");
               modelo.addColumn("Fecha");
               modelo.addColumn("Hora Entrada");
@@ -139,8 +138,8 @@ public class PanelPrincipal extends JPanel implements Printable {
                                       JOptionPane.showMessageDialog(null,
                                                                     "No existen datos para ese rango de fechas",
                                                                     "No hay datos",                                                                    
-                                                                    JOptionPane.WARNING_MESSAGE
-                                                                    );   
+                                                                    JOptionPane.WARNING_MESSAGE);   
+                                      
                                       return;
                                                                                                                   
                                   }else{
