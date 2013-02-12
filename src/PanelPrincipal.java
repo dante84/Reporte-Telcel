@@ -408,14 +408,13 @@ public class PanelPrincipal extends JPanel implements Printable {
               int mFf = Integer.parseInt(ff.substring(3,5));
               int aFf = Integer.parseInt(ff.substring(6,10));
                                           
-              g.drawString("Manifiesto expresamente que la jornada de labores asentada en el presente registro de asistencia es la que labore durante el período comprendido del ASENTAR PERIODO VGR. DEL " +
+              g.drawString("Manifiesto expresamente que la jornada de labores asentada en el presente registro de asistencia es la que labore durante el período comprendido del VGR. DEL " +
                             dFi + " AL " +  dFf + " DE " + meses[mFi] + " DEL " + aFi ,50,400);
               g.drawString(" y que durante dicho período NO labore tiempo extraordinario alguno,ya que me encuentro consiente de que de acuerdo a mi contrato individual " + 
                            "de trabajo en los casos en que por circunstancias especiales sea ",50,420);
               g.drawString("necesario prolongar la jornada laboral me obligo a laborar la jornada extraordinaria que sea necesaria, de conformidad con lo dispuesto " + 
                            "por el artículo 66 de la Ley Federal del Trabajo,en la inteligencia ",50,440);
-              g.drawString("de que dicha jornada sólo será laborada previa autorización que en forma previa y por escrito me entregue el PATRÓN o sus representantes.",50,460);
-              
+              g.drawString("de que dicha jornada sólo será laborada previa autorización que en forma previa y por escrito me entregue el \"PATRÓN\" o sus representantes.",50,460);              
               
               g.drawString((String)listaDatos.get(0)[0] + " ", 50, 520);
                
